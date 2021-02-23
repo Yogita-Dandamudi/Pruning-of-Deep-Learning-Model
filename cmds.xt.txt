@@ -1,0 +1,11 @@
+
+# train original model
+python main.py --dataset cifar10 --arch vgg --depth 16
+
+# Prune
+python vggprune.py --dataset cifar10 --model [PATH TO THE MODEL] --save [DIRECTORY TO STORE RESULT]
+
+# retrain the model
+python main_finetune.py --refine [PATH TO THE PRUNED MODEL] --dataset cifar10 --arch vgg --depth 16 
+
+
